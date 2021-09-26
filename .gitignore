@@ -2,7 +2,8 @@
 .psci_modules
 bower_components
 node_modules
-
+lib
 # Generated files
 .psci
 output
+
