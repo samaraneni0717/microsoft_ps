@@ -11,8 +11,7 @@ function merge(intervals: number[][]): number[][] {
     //if previous last element greater than current first element then overlap exists
     //so loop from 1st index
     let result: any[][] = [];
-    let prevFirst;
-    let prevSecond;
+
 
     for (let i = 1; i < intervals.length; i++) {
 
@@ -26,12 +25,12 @@ function merge(intervals: number[][]): number[][] {
             result[result.length - 1][1] = Math.max(result[result.length - 1][1], intervals[i][1]);
 
         }
-        else if (i + 1 === intervals.length) {
+        else if (i + 1 === intervals.length) { //hanle edge case when pointer hits the end of the array
 
             result.push([intervals[i][0], intervals[i][1]])
         }
 
-        else {
+        else { //push the non overlapping intervals as is
 
             result.push([intervals[i][0], intervals[i][1]])
         }
